@@ -28,6 +28,7 @@ TripPilot 是一个面向国内城市自由行场景的旅行规划 Agent。项�
 - [需求草案](docs/requirements.md)
 - [验收标准草案](docs/acceptance-criteria.md)
 - [架构决策记录](docs/decisions/README.md)
+- [贡献与提交规范](CONTRIBUTING.md)
 
 ## 本地开发
 
