@@ -26,10 +26,10 @@ refactor/tool-registry
 基本格式：
 
 ```text
-<type>(<scope>): <description>
+<type>: <中文描述>
 ```
 
-`scope` 可选，冒号后保留一个空格。标题应简洁说明本次提交完成了什么。
+本项目不使用 `scope`。冒号后保留一个空格，描述使用简洁中文，直接说明本次提交完成了什么。
 
 常用类型：
 
@@ -49,10 +49,10 @@ refactor/tool-registry
 推荐示例：
 
 ```text
-feat(planner): 支持按旅行偏好筛选景点
-fix(budget): 修复零预算未被拒绝的问题
+feat: 支持按旅行偏好筛选景点
+fix: 修复零预算未被拒绝的问题
 docs: 补充产品范围和非目标
-test(tools): 增加天气工具超时测试
+test: 增加天气工具超时测试
 chore: 初始化项目仓库
 ```
 
@@ -67,7 +67,7 @@ update
 存在不兼容变更时，在类型后添加 `!`，并在正文中说明影响：
 
 ```text
-feat(api)!: 调整旅行需求接口字段
+feat!: 调整旅行需求接口字段
 ```
 
 ## 提交前检查
