@@ -47,5 +47,11 @@ jobs:
       - name: Test
         run: uv run pytest
 
+      - name: Validate Agent evaluation dataset
+        run: uv run trippilot-eval
+
+      - name: Validate database migration
+        run: uv run alembic upgrade head --sql > /dev/null
+
       - name: Build package
         run: uv build
