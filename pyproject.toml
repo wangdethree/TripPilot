@@ -4,7 +4,26 @@ version = "0.1.0"
 description = "A controllable and testable travel-planning agent."
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+  "alembic>=1.18,<2",
+  "fastapi>=0.140,<0.141",
+  "httpx>=0.28,<1",
+  "langgraph>=1.2,<2",
+  "langgraph-checkpoint-postgres>=3.1,<4",
+  "openai>=2.50,<3",
+  "opentelemetry-api>=1.44,<2",
+  "opentelemetry-instrumentation-fastapi>=0.65b0,<1",
+  "opentelemetry-sdk>=1.44,<2",
+  "psycopg[binary,pool]>=3.3,<4",
+  "pydantic>=2.13,<3",
+  "pydantic-settings>=2.14,<3",
+  "sqlalchemy>=2.0,<3",
+  "structlog>=25.5,<26",
+  "uvicorn>=0.51,<1",
+]
+
+[project.scripts]
+trippilot-eval = "trippilot.evaluation.runner:main"
 
 [build-system]
 requires = ["uv_build>=0.11.32,<0.12"]
