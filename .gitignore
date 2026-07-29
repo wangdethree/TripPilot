@@ -9,6 +9,10 @@ dist/
 .venv/
 venv/
 
+# Local bootstrap tools and caches
+.tools/
+.cache/
+
 # Tests and tooling
 .coverage
 htmlcov/

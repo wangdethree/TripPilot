@@ -4,7 +4,7 @@ TripPilot 是一个面向国内城市自由行场景的旅行规划 Agent。项�
 
 ## 当前状态
 
-- 阶段：Sprint 0（需求与架构基线完成）
+- 阶段：Sprint 1（工程基础与领域建模）
 - 需求状态：Requirements Baseline v1.0（Accepted）
 - 架构状态：Architecture Baseline v1.0（Accepted）
 - 第一版目标：为国内城市 1～3 日自由行生成可检查、可调整的个性化行程
@@ -39,8 +39,26 @@ TripPilot 是一个面向国内城市自由行场景的旅行规划 Agent。项�
 - [需求评审清单](docs/requirements-review.md)
 - [架构设计](docs/architecture/README.md)
 - [架构决策记录](docs/decisions/README.md)
+- [开发路线图与 Sprint 1](docs/development-plan.md)
 - [贡献与提交规范](CONTRIBUTING.md)
 
 ## 本地开发
 
-开发环境和运行方式将在完成 Sprint 0 的技术选型后补充。
+项目使用 Python 3.12 和 uv。首次安装 uv 后执行：
+
+```bash
+uv sync --locked
+uv run pytest
+```
+
+完整本地质量检查：
+
+```bash
+uv run ruff format --check .
+uv run ruff check .
+uv run mypy src tests
+uv run pytest
+uv build
+```
+
+依赖只能通过 `pyproject.toml` 和 `uv.lock` 管理，不维护独立的 `requirements.txt`。

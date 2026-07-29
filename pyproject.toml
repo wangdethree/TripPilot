@@ -1,0 +1,79 @@
+[project]
+name = "trippilot"
+version = "0.1.0"
+description = "A controllable and testable travel-planning agent."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[build-system]
+requires = ["uv_build>=0.11.32,<0.12"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+  "hypothesis>=6.163,<7",
+  "mypy>=2.3,<3",
+  "pytest>=9.1,<10",
+  "pytest-asyncio>=1.4,<2",
+  "pytest-cov>=7.1,<8",
+  "ruff>=0.16,<0.17",
+]
+
+[tool.uv]
+required-version = "==0.11.32"
+package = true
+environments = [
+  "sys_platform == 'darwin' and platform_machine == 'x86_64'",
+  "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "ASYNC",
+  "B",
+  "E",
+  "F",
+  "I",
+  "RUF",
+  "UP",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests"]
+pretty = true
+show_error_codes = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = [
+  "--strict-config",
+  "--strict-markers",
+  "--cov=trippilot",
+  "--cov-branch",
+  "--cov-report=term-missing",
+  "--cov-fail-under=85",
+]
+asyncio_mode = "strict"
+
+[tool.coverage.run]
+branch = true
+source = ["trippilot"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+]
