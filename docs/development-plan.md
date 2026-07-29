@@ -1,6 +1,6 @@
 # 开发路线图与 Sprint 1
 
-> 状态：In Progress
+> 状态：Portfolio MVP Complete
 >
 > 版本：v1.0
 
@@ -23,11 +23,13 @@
 | Sprint 1 | 可安装、可测试的领域项目骨架 | Python 工程结构、值对象、测试、类型检查、CI |
 | Sprint 2 | 接收并校验一份旅行需求 | FastAPI、Pydantic、应用用例、错误映射 |
 | Sprint 3 | 使用 Fake Model 生成并检查候选行程 | Agent 状态、节点契约、结构化输出、确定性规则 |
-| Sprint 4 | 可暂停、确认、恢复和取消规划任务 | LangGraph、Checkpoint、`asyncio`、取消传播 |
-| Sprint 5 | 持久化任务和不可变行程版本 | PostgreSQL、SQLAlchemy Async、事务、幂等 |
+| Sprint 4 | 可确认、执行和取消规划任务 | LangGraph、Checkpoint、`asyncio`、取消传播 |
+| Sprint 5 | 数据、版本与幂等基础设施 | PostgreSQL Schema、SQLAlchemy Async、迁移、幂等 |
 | Sprint 6 | 接入真实模型与旅行工具 | Responses API、工具契约、并发 I/O、超时与重试 |
 | Sprint 7 | 完成 Web 演示闭环 | React、轮询、错误与状态展示 |
-| Sprint 8 | 建立评测、观测和部署证据 | 数据集评测、Trace、指标、Docker、发布演练 |
+| Sprint 8 | 建立评测、观测和部署证据 | 数据集契约、Trace、Docker、CI |
+
+以上 Sprint 的 Portfolio MVP 增量已经交付。完整生产 Worker、局部修改闭环和全量行为 Eval 的状态以[实现状态](implementation-status.md)为准。
 
 真实 OpenAI、天气、地点和路线服务在相应端口与 Fake 实现稳定后接入，避免外部依赖阻塞核心业务开发。
 
@@ -43,12 +45,12 @@
 | --- | --- | --- | --- | --- |
 | `S1-01` | 初始化 Python 包与模块目录 | Codex | `pyproject.toml`、`src/trippilot` | Done |
 | `S1-02` | 建立格式、Lint、类型、测试、覆盖率与构建门禁 | Codex | 工具配置、锁文件、GitHub Actions | Done |
-| `S1-03` | 实现 `Money` 值对象 | 学习者 | 金额模型及单元测试 | Ready |
-| `S1-04` | 实现 `TravelDateRange` 值对象 | 学习者 | 日期范围模型及单元测试 | Pending |
-| `S1-05` | 组合 `TravelRequest` 领域模型 | 学习者 + Codex | 需求模型及业务不变量测试 | Pending |
-| `S1-06` | 完成 Sprint 评审与回顾 | 共同 | 演示记录、问题与下一步 | Pending |
+| `S1-03` | 实现 `Money` 值对象 | 学习者 | 金额模型及单元测试 | Done |
+| `S1-04` | 实现 `TravelDateRange` 值对象 | 学习者 | 日期范围模型及单元测试 | Done |
+| `S1-05` | 组合 `TravelRequest` 领域模型 | 学习者 + Codex | 需求模型及业务不变量测试 | Done |
+| `S1-06` | 完成 Sprint 评审与回顾 | 共同 | 演示记录、问题与下一步 | Done |
 
-任务按编号顺序推进。`S1-03` 通过评审前不开始 `S1-04`，以便先建立一致的领域建模和测试习惯。
+以下任务描述作为项目学习复盘材料保留；实现代码和测试已经完成，可以按编号重新练习。
 
 ## S1-03：第一个编码任务
 
