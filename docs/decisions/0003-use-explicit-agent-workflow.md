@@ -1,6 +1,6 @@
 # ADR-0003：使用显式状态图编排 Agent
 
-> 状态：Proposed
+> 状态：Accepted
 >
 > 日期：2026-07-28
 

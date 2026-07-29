@@ -4,9 +4,9 @@ TripPilot 是一个面向国内城市自由行场景的旅行规划 Agent。项�
 
 ## 当前状态
 
-- 阶段：Sprint 0（架构设计）
+- 阶段：Sprint 0（需求与架构基线完成）
 - 需求状态：Requirements Baseline v1.0（Accepted）
-- 架构状态：Architecture Baseline v1.0（In Review）
+- 架构状态：Architecture Baseline v1.0（Accepted）
 - 第一版目标：为国内城市 1～3 日自由行生成可检查、可调整的个性化行程
 
 ## 第一版范围

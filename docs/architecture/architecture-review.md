@@ -1,8 +1,8 @@
 # 架构评审清单
 
-> 状态：In Review
+> 状态：Accepted
 >
-> 候选基线：v1.0
+> 基线：v1.0
 
 ## 需求与范围
 
@@ -55,21 +55,21 @@
 - [x] 数据库迁移、健康检查、备份和发布流程已定义
 - [x] 关键架构风险具有测试或重新评估条件
 
-## 待批准 ADR
+## 已批准 ADR
 
 - [x] `ADR-0002` 模块化单体已经确认
-- [ ] `ADR-0003` 显式状态图
-- [ ] `ADR-0004` LangGraph 工作流运行时
-- [ ] `ADR-0005` PostgreSQL 权威存储与任务协调
-- [ ] `ADR-0006` OpenAI Responses API 适配器
-- [ ] `ADR-0007` REST 命令与状态轮询
+- [x] `ADR-0003` 显式状态图
+- [x] `ADR-0004` LangGraph 工作流运行时
+- [x] `ADR-0005` PostgreSQL 权威存储与任务协调
+- [x] `ADR-0006` OpenAI Responses API 适配器
+- [x] `ADR-0007` REST 命令与状态轮询
 
 ## 架构基线批准
 
-- [ ] 产品与架构评审人确认候选基线
-- [ ] 所有 Proposed ADR 改为 Accepted
-- [ ] 所有 In Review 架构文档改为 Accepted
-- [ ] 创建架构基线提交
-- [ ] 创建 `architecture-v1.0` Git 标签
+- [x] 产品与架构评审人确认候选基线
+- [x] 所有 Proposed ADR 改为 Accepted
+- [x] 所有 In Review 架构文档改为 Accepted
+- [x] 创建架构基线提交
+- [x] 创建 `architecture-v1.0` Git 标签
 
-只有架构基线批准后，项目才进入工程骨架和业务编码阶段。
+架构基线已经批准，项目可以进入工程骨架和业务编码阶段。

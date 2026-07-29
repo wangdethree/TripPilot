@@ -1,6 +1,6 @@
 # ADR-0005：使用 PostgreSQL 作为权威存储与任务协调基础
 
-> 状态：Proposed
+> 状态：Accepted
 >
 > 日期：2026-07-28
 

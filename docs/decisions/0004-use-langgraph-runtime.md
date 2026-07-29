@@ -1,6 +1,6 @@
 # ADR-0004：使用 LangGraph 作为工作流运行时
 
-> 状态：Proposed
+> 状态：Accepted
 >
 > 日期：2026-07-28
 

@@ -1,6 +1,6 @@
 # ADR-0006：通过模型端口接入 OpenAI Responses API
 
-> 状态：Proposed
+> 状态：Accepted
 >
 > 日期：2026-07-28
 
