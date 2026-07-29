@@ -1,0 +1,60 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: trippilot
+      POSTGRES_USER: trippilot
+      POSTGRES_PASSWORD: trippilot
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U trippilot"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    volumes:
+      - trippilot-postgres:/var/lib/postgresql/data
+
+  migrate:
+    build: .
+    command: ["alembic", "-c", "/workspace/alembic.ini", "upgrade", "head"]
+    working_dir: /workspace
+    user: root
+    volumes:
+      - .:/workspace:ro
+    environment:
+      TRIPPILOT_DATABASE_URL: postgresql+psycopg://trippilot:trippilot@postgres:5432/trippilot
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  backend:
+    build: .
+    environment:
+      TRIPPILOT_APP_ENV: container
+      TRIPPILOT_MODEL_PROVIDER: fake
+      TRIPPILOT_TOOL_PROVIDER: fake
+      TRIPPILOT_TOKEN_PEPPER: local-compose-pepper-change-before-deploy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  frontend:
+    build: ./web
+    ports:
+      - "8080:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  trippilot-postgres:
